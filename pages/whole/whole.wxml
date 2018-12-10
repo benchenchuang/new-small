@@ -1,5 +1,35 @@
 <!--pages/whole/whole.wxml-->
 <van-tabs active="{{ active }}" color="#37C249" bind:change="onChange">
+  <van-tab title="常问">
+    <view class='question_box'>
+      <navigator url="" hover-class='none' class='question_item flex_box'>
+        <view class='flex_item'>
+          <view class='title'>你们做过和我们类似的项目吗</view>
+          <view class='label_box'>
+            <text class='label'>项目阶段</text>
+            <text class='label'>防火与逃生</text>
+            <text class='label'>降低噪音</text>
+          </view>
+        </view>
+        <view class='question_image'>
+          <image src='../images/20181031135927gp.jpeg' mode='widthFix'></image>
+        </view>
+      </navigator>
+      <navigator url="" hover-class='none' class='question_item flex_box'>
+        <view class='flex_item'>
+          <view class='title'>你们做过和我们类似的项目吗</view>
+          <view class='label_box'>
+            <text class='label'>项目阶段</text>
+            <text class='label'>防火与逃生</text>
+            <text class='label'>降低噪音</text>
+          </view>
+        </view>
+        <view class='question_image'>
+          <image src='../images/20181031135927gp.jpeg' mode='widthFix'></image>
+        </view>
+      </navigator>
+    </view>
+  </van-tab>
   <van-tab title="场景">
     <view wx:if="{{scenes[0] != null }}">
       <view wx:for="{{scenes}}" wx:for-item="scenesInfo">
@@ -63,31 +93,13 @@
       <view class='case_body'>
         <block wx:for="{{cases}}" wx:for-item="case">
           <navigator url="/pages/article_info/article_info?aid={{case.aid}}">
-            <view class="case_container">
-              <view style='background-image:url({{case.cover}});' class='case_img_container background-img'>
-                <view wx:if='{{case.has_video == 1}}'>
-                  <cover-view class='case_play_info'>
-                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
-                    </cover-image>
-                    <cover-view class='play_text'>
-                      {{case.duration_str}}
-                    </cover-view>
-                  </cover-view>
-
-
-                </view>
-              </view>
-
-              <view class="case_title">
-                <text>{{case.title}}</text>
-              </view>
-              <view class='case_creater'>
-                <text>{{case.creater}}推荐</text>
-                <view style='float:right;margin-right:20px;'>
-                  <van-icon name="like-o" custom-style="position:relative;top:2px;margin-right:5px;" />
-                  <text>{{case.praise_users_count}}</text>
-                </view>
-
+            <view class='case_item'>
+              <view class='case_title'>{{case.title}}</view>
+              <image class='case_pic' src='{{case.cover}}' mode='widthFix'></image>
+              <view class='label_box'>
+                <text class='label'>项目阶段</text>
+                <text class='label'>防火与逃生</text>
+                <text class='label'>降低噪音</text>
               </view>
             </view>
           </navigator>
@@ -157,24 +169,12 @@
   </van-tab>
   <van-tab title="产品">
     <view wx:if="{{products[0] != null }}">
-      <view class="deamand_container">
+      <view class="deamand_container" style="column-count:2;column-gap: 2px;">
         <block wx:for="{{products}}" wx:for-item="product">
-          <navigator url="/pages/article_info/article_info?aid={{product.aid}}">
-            <view class="demand_box">
-              <view class="demand_pic" style='background-image:url({{product.cover}});'>
-                <view wx:if='{{product.has_video == 1}}'>
-                  <cover-view class='play_info'>
-                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
-                    </cover-image>
-                    <cover-view class='play_text'>
-                      {{product.duration_str}}
-                    </cover-view>
-                  </cover-view>
-                </view>
-              </view>
-              <cover-view class="demand_title">
-                {{product.title}}
-              </cover-view>
+          <navigator class='product_box' url="/pages/article_info/article_info?aid={{product.aid}}">
+            <view class='product_item'>
+              <image src="{{product.cover}}" mode="widthFix"></image>
+              <view class='pro_title'>{{product.title}}</view>
             </view>
           </navigator>
         </block>
@@ -227,85 +227,13 @@
     </view>
 
   </van-tab>
-  <van-tab title="名片">
-    <view class='card_container'>
-      <view class='card_background'>
-        <image src='/pages/images/card_background.png' style='width:600rpx;height:900rpx;'>
-        </image>
-        <view class='card_content'>
-          <view class='avatar'>
-            <image src="{{userCard.headimgurl}}" style='width:200rpx;height:200rpx;'></image>
-          </view>
-          <view class='user_position'>
-            <view>
-              <text>{{userCard.realname}}</text>
-            </view>
-            <view class='value_font'>
-              <text>{{userCard.position}}</text>
-            </view>
-
-          </view>
-
-          <view class="card_list">
-            <view class="list_info">
-              <image src='/pages/images/phone.png' style='width:50rpx;height:50rpx;'></image>
-              <view class="list_key">
-                手机
-              </view>
-              <view class="list_value">
-                <text>{{userCard.phone}}</text>
-              </view>
-            </view>
-
-            <view class="list_info">
-              <image src='/pages/images/wechat.png' style='width:50rpx;height:50rpx;'></image>
-              <view class="list_key">
-                微信
-              </view>
-              <view class="list_value">
-                <text>{{userCard.nickname}}</text>
-              </view>
-            </view>
-            <view class="list_info">
-              <image src='/pages/images/email.png' style='width:50rpx;height:50rpx;'></image>
-              <view class="list_key">
-                邮箱
-              </view>
-              <view class="list_value">
-                <text>{{userCard.email}}</text>
-              </view>
-            </view>
-            <view class="list_info">
-              <image src='/pages/images/company.png' style='width:50rpx;height:50rpx;'></image>
-              <view class="list_key">
-                公司
-              </view>
-              <view class="list_value">
-                <text>{{userCard.company}}</text>
-              </view>
-            </view>
-            <view class="list_info">
-              <image src='/pages/images/address.png' style='width:50rpx;height:50rpx;'></image>
-              <view class="list_key">
-                地址
-              </view>
-              <view class="list_value">
-                <text>{{userCard.company_address}}</text>
-              </view>
-            </view>
-
-          </view>
-        </view>
-      </view>
-    </view>
-  </van-tab>
 </van-tabs>
 
-<van-popup show="{{show_tag_select}}" position="top" bind:close="onClose" custom-style="background:#323E47" close-on-click-overlay="true" custom-class="popup_class">
+<van-popup show="{{show_tag_select}}" position="top" bind:close="onClose" close-on-click-overlay="true" custom-class="popup_class">
   <block wx:for="{{filterTags}}" wx:for-item="filterTag">
     <van-tag type="primary" custom-class="filterTags" data-tag_id="{{filterTag.tag_id}}" data-tag_name="{{filterTag.tag_name}}" bindtap="tagClick">{{filterTag.tag_name}}</van-tag>
   </block>
 </van-popup>
 <view id='fix_card' bindtap="tagSelect">
-  <image src="/pages/images/Category.png" style='width:35px;height:35px;margin-left:40rpx;'></image>
+  <image src="/pages/images/Category.png" style='width:60rpx;height:60rpx;margin:0 auto;'></image>
 </view>

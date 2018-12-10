@@ -1,0 +1,40 @@
+<!--pages/person/person.wxml-->
+<view class='person_info'>
+  <view class='person_avatar'>
+    <image class='avatar' src='../images/avatar.jpg'></image>
+  </view>
+  <view class='user_info'>
+    <view class='name'>刘飞</view>
+    <view class='job'>职业顾问</view>
+    <view class='company'>北京什么公司</view>
+  </view>
+</view>
+
+<view class='info_box'>
+  <view class='flex_box'>
+    <text class='name'>手机</text>
+    <view class='flex_item val'>186111111111</view>
+    <image class="icon" src='../images/phone.png' mode='widthFix'></image>
+  </view>
+  <view class='flex_box'>
+    <text class='name'>微信</text>
+    <view class='flex_item val'>186111111111</view>
+    <image class="icon" src='../images/weixin.png' mode='widthFix'></image>
+  </view>
+  <view class='flex_box'>
+    <text class='name'>邮箱</text>
+    <view class='flex_item val'>186111111111</view>
+    <image class="icon" src='../images/email.png' mode='widthFix'></image>
+  </view>
+  <view class='flex_box'>
+    <text class='name'>地址</text>
+    <view class='flex_item val'>186111111111</view>
+    <image class="icon" src='../images/address.png' mode='widthFix'></image>
+  </view>
+</view>
+
+<view class='btn_box'>
+  <button class='control_btn' type='button'>分享名片</button>
+  <button class='control_btn' type='button'>存入手机通讯录</button>
+</view>
+

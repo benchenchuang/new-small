@@ -1,28 +1,32 @@
 <!--pages/photo/photo.wxml-->
-<block wx:if="{{list[0] != null}}">
-<view class='photo_container'>
-    <block wx:for="{{list}}" wx:for-item="list">
-      <navigator url="/pages/photo_info/photo_info?photo_id={{list.photo_id}}">
-        <view class='list_div'>
-          <image src="{{list.pic_url}}" mode='aspectFill' style='width:375rpx;height:495rpx;'></image>
-          <view wx:if='{{list.is_video == 1}}'>
-                <cover-view class='play_info'>
-                  <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
-                  </cover-image>
-                  <cover-view class='play_text'>
-                    {{list.duration_str}}
-                  </cover-view>
-                </cover-view>
-              </view>
-          <view class="description">
-            <textarea style='width:355rpx;height:70rpx;' value="{{list.description}}"></textarea>
-          </view>
-        </view>
-         </navigator>
-    </block>
+<view class='photo_top'>
+  <view class='photo_user'>
+    <view class='flex_box'>
+      <view class='user_info flex_item'>
+        <image class='avatar' src='../images/avatar.jpg'></image>
+        <text class='name'>刘菲菲工作图库</text>
+      </view>
+      <view class='select_tab'><image class='icon-select' src="../images/icon-select.png" mode='widthFix'></image>筛选</view>
+    </view>
+    <view class='user_control'>
+      <text class='label'>石膏面板</text>
+      <navigator class='label'><image class="icon_back" src='../images/icon_back.png' mode='widthFix'></image></navigator>
+    </view>
   </view>
-</block>
+</view>
 
-<view wx:if="{{list[0] == null}}" class='no-data'>
-  暂无数据
+<view class='photos'>
+  <view class='photo_item'>
+    <view class='desc'>说明文字在这里</view>
+    <image src='../images/photo.jpg'></image>
+  </view>
+  <view class='photo_item'>
+    <image src='../images/photo.jpg'></image>
+  </view><view class='photo_item'>
+    <view class='desc'>说明文字在这里</view>
+    <image src='../images/photo.jpg'></image>
+  </view>
+  <view class='photo_item'>
+    <image src='../images/photo.jpg'></image>
+  </view>
 </view>

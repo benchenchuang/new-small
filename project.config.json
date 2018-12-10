@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
 	"appid": "wxc7f0f7890970659e",
-	"projectname": "mt_weapp",
+	"projectname": "new-small",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": 1,
@@ -74,6 +74,11 @@
 					"name": "首页",
 					"pathName": "pages/index/index",
 					"query": "token=827a269061886077f8ca88204649c8a5&cid=17&uid=193&usid=243&code=001el91n1HWR1q03x01n1eBS0n1el91S"
+				},
+				{
+					"id": -1,
+					"name": "个人",
+					"pathName": "pages/person/person"
 				}
 			]
 		}

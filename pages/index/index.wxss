@@ -1,7 +1,7 @@
 /**index.wxss**/
 .home_top{
   padding: 0 30rpx;
-  background: linear-gradient(#48abd5 0%, #fff 70%);
+  background: linear-gradient(#2f85e8 0%, #fff 70%);
 }
 .header_box{
   padding: 20rpx 0;

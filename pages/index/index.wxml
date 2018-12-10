@@ -1,6 +1,6 @@
 <view class='home_top'>
   <view class='flex_box header_box'>
-    <navigator class='person' url='' hover-class='none'>
+    <navigator class='person' url='../person/person' hover-class='none'>
       <image src='../images/person.png' mode="widthFix"></image>
     </navigator>
     <navigator class='search_box flex_item' url='../search/search' hover-class='none'>

@@ -36,12 +36,6 @@
   border-bottom: 1px solid #e7e8e9;
   box-sizing: border-box;
 }
-.case_title{
-  position: relative;
-  top:-35px;
-  padding-left: 10px;
-  color:white;
-}
 .case_creater {
   margin-top: 5px;
   font-size: 13px;
@@ -131,25 +125,27 @@
   width:710rpx;
 }
 .company_intro{
+  font-size: 28rpx;
   margin-bottom: 15rpx;
   color:#919293;
 }
 .advantage_title{
-    background: #656F75;
+  font-size: 34rpx;
+  background: #656F75;
   color:white;
   display: inline-block;
   box-sizing: border-box;
-  padding:5rpx;
+  padding:5rpx 10rpx;
   margin-bottom: 5rpx;
   margin-top:20rpx;
 }
 .advantage_name{
-   font-size:18px;
+   font-size:30rpx;
   margin-bottom:5rpx;
 
 }
 .advantage_value{
-  font-size:16px;
+  font-size:26rpx;
   color:#919293;
   margin-bottom: 5rpx;
 }
@@ -158,16 +154,14 @@
   position: fixed;
   display: flex;
   align-items: center;
-  opacity: 0.4;
   bottom: 10px;
-  right: 0px;
-  background: black;
-  border: 1px solid white;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  box-shadow: 0 0 4px #e7e8e9;
-  width: 180rpx;
+  right: 0;
+  background: #46bd63;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100rpx;
   height: 80rpx;
+  text-align: center;
 }
 .popup_class{
   min-height: 200rpx;
@@ -197,9 +191,87 @@
 }
 .demand_pic{
   width:330rpx;
-  height:300rpx;
+  /* height:300rpx; */
   position: relative;
     background-repeat:no-repeat; 
   background-size:100% 100%;
   -moz-background-size:100% 100%;
 }
+.demand_pic image{
+  width: 100%;
+}
+
+.van-tab.van-tab{
+  border:none!important;
+}
+
+.question_box{
+  padding: 0 20rpx;
+}
+.question_item{
+  padding: 20rpx 0;
+  border-bottom:1px solid #f4f4f4;
+}
+.question_item:last-child{
+  border-bottom: none;
+}
+.question_item .question_image,
+.question_image image,
+.question_image video{
+  width: 160rpx;
+}
+.question_item .title{
+  font-size: 34rpx;
+  color: #333;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.label_box{
+  margin-top: 10rpx;
+  overflow: hidden;
+}
+.label_box .label{
+  float: left;
+  margin-right: 18rpx;
+  font-size: 24rpx;
+  padding: 8rpx 18rpx;
+  color: #aaa;
+  background: #f4f4f4;
+}
+
+.case_item{
+  padding: 20rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.case_body navigator:last-child .case_item{
+  border-bottom: none;
+}
+.case_item .case_title{
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+.case_item .case_pic{
+  width: 100%;
+}
+.product_item image{
+  width: 100%;
+  vertical-align: top;
+}
+.product_box{
+  margin-top: 20rpx;
+  display: inline-block;
+	width:98%;
+	height: 100%;
+	overflow: auto;
+  box-shadow: 0 2rpx 4rpx 4rpx rgba(0,0,0,.05);
+}
+.product_item .pro_title{
+  padding: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+

@@ -10,11 +10,12 @@
     "pages/photo_info/photo_info",
     "pages/constants/constants",
     "pages/constant_info/constant_info",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/person/person"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#48abd5",
+    "navigationBarBackgroundColor": "#2f85e8",
     "navigationBarTitleText": "面谈助手",
     "navigationBarTextStyle": "light"
   },
@@ -37,7 +38,7 @@
         "selectedIconPath": "pages/images/data_on.png"
       },
       {
-        "pagePath": "pages/constants/constants",
+        "pagePath": "pages/photo/photo",
         "text": "图库",
         "iconPath": "pages/images/image.png",
         "selectedIconPath": "pages/images/image_on.png"
