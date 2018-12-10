@@ -1,0 +1,311 @@
+<!--pages/whole/whole.wxml-->
+<van-tabs active="{{ active }}" color="#37C249" bind:change="onChange">
+  <van-tab title="场景">
+    <view wx:if="{{scenes[0] != null }}">
+      <view wx:for="{{scenes}}" wx:for-item="scenesInfo">
+        <view wx:if="{{scenesInfo.cover.length == 0}}">
+          <navigator url="/pages/article_info/article_info?aid={{scenesInfo.aid}}" class="flex-container">
+            <view class="whole_left">
+              <view class='scenes_title'>
+                <text>{{scenesInfo.title}}</text>
+              </view>
+              <view class='scenes_intro'>
+                <text>{{scenesInfo.intro}}</text>
+              </view>
+              <view class='scenes_creater'>
+                <text>{{scenesInfo.creater}}</text>
+                <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+                <text>{{scenesInfo.praise_users_count}}</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view wx:else>
+          <navigator url="/pages/article_info/article_info?aid={{scenesInfo.aid}}" class="flex-container">
+            <view class="scenes_container">
+              <view class="scenes_left">
+                <view class='scenes_title'>
+                  <text>{{scenesInfo.title}}</text>
+                </view>
+                <view class='scenes_intro'>
+                  <text>{{scenesInfo.intro}}</text>
+                </view>
+                <view class='scenes_creater'>
+                  <text>{{scenesInfo.creater}}</text>
+                  <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+                  <text>{{scenesInfo.praise_users_count}}</text>
+                </view>
+              </view>
+              <view class="scenes_right" style='background-image:url({{scenesInfo.cover}})'>
+                <view wx:if='{{scenesInfo.has_video == 1}}'>
+                  <cover-view class='play_info'>
+                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                    </cover-image>
+                    <cover-view class='play_text'>
+                      {{scenesInfo.duration_str}}
+                    </cover-view>
+                  </cover-view>
+                </view>
+              </view>
+
+            </view>
+          </navigator>
+        </view>
+
+      </view>
+    </view>
+    <view wx:if="{{scenes[0] == null}}" class='no-data'>
+      暂无数据
+    </view>
+  </van-tab>
+  <van-tab title="案例">
+    <view wx:if="{{cases[0] != null }}">
+      <view class='case_body'>
+        <block wx:for="{{cases}}" wx:for-item="case">
+          <navigator url="/pages/article_info/article_info?aid={{case.aid}}">
+            <view class="case_container">
+              <view style='background-image:url({{case.cover}});' class='case_img_container background-img'>
+                <view wx:if='{{case.has_video == 1}}'>
+                  <cover-view class='case_play_info'>
+                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                    </cover-image>
+                    <cover-view class='play_text'>
+                      {{case.duration_str}}
+                    </cover-view>
+                  </cover-view>
+
+
+                </view>
+              </view>
+
+              <view class="case_title">
+                <text>{{case.title}}</text>
+              </view>
+              <view class='case_creater'>
+                <text>{{case.creater}}推荐</text>
+                <view style='float:right;margin-right:20px;'>
+                  <van-icon name="like-o" custom-style="position:relative;top:2px;margin-right:5px;" />
+                  <text>{{case.praise_users_count}}</text>
+                </view>
+
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+    <view wx:if="{{cases[0] == null}}" class='no-data'>
+      暂无数据
+    </view>
+  </van-tab>
+  <van-tab title="需求">
+    <view wx:if="{{demands[0] != null }}">
+      <view wx:for="{{demands}}" wx:for-item="demand">
+        <view wx:if="{{demand.cover.length == 0}}">
+          <navigator url="/pages/article_info/article_info?aid={{demand.aid}}" class="flex-container">
+            <view class="whole_left">
+              <view class='scenes_title'>
+                <text>{{demand.title}}</text>
+              </view>
+              <view class='scenes_intro'>
+                <text>{{demand.intro}}</text>
+              </view>
+              <view class='scenes_creater'>
+                <text>{{demand.creater}}</text>
+                <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+                <text>{{demand.praise_users_count}}</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view wx:else>
+          <navigator url="/pages/article_info/article_info?aid={{demand.aid}}" class="flex-container">
+            <view class="scenes_container">
+              <view class="scenes_left">
+                <view class='scenes_title'>
+                  <text>{{demand.title}}</text>
+                </view>
+                <view class='scenes_intro'>
+                  <text>{{demand.intro}}</text>
+                </view>
+                <view class='scenes_creater'>
+                  <text>{{demand.creater}}</text>
+                  <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+                  <text>{{demand.praise_users_count}}</text>
+                </view>
+              </view>
+              <view class="scenes_right" style='background-image:url({{demand.cover}})'>
+                <view wx:if='{{demand.has_video == 1}}'>
+                  <cover-view class='play_info'>
+                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                    </cover-image>
+                    <cover-view class='play_text'>
+                      {{demand.duration_str}}
+                    </cover-view>
+                  </cover-view>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+
+      </view>
+    </view>
+    <view wx:if="{{demands[0] == null}}" class='no-data'>
+      暂无数据
+    </view>
+  </van-tab>
+  <van-tab title="产品">
+    <view wx:if="{{products[0] != null }}">
+      <view class="deamand_container">
+        <block wx:for="{{products}}" wx:for-item="product">
+          <navigator url="/pages/article_info/article_info?aid={{product.aid}}">
+            <view class="demand_box">
+              <view class="demand_pic" style='background-image:url({{product.cover}});'>
+                <view wx:if='{{product.has_video == 1}}'>
+                  <cover-view class='play_info'>
+                    <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                    </cover-image>
+                    <cover-view class='play_text'>
+                      {{product.duration_str}}
+                    </cover-view>
+                  </cover-view>
+                </view>
+              </view>
+              <cover-view class="demand_title">
+                {{product.title}}
+              </cover-view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+    <view wx:if="{{products[0] ==null}}" class='no-data'>
+      暂无数据
+    </view>
+  </van-tab>
+  <van-tab title="公司">
+    <view class='company_background_img'>
+      <image src='{{companyInfo.company_cover}}' style='width:750rpx;height:600rpx;'>
+      </image>
+      <view class="company_name">
+        <text>{{companyInfo.company}}</text>
+      </view>
+    </view>
+    <view wx:if="{{companyInfo.has_video == 1}}">
+      <video id="myvideo" src='{{companyInfo.video_url}}' autoplay='true' style='width:100%;margin-top:5px;'></video>
+    </view>
+    <view wx:if="{{companyInfo.edit_type == 0}}">
+      <view class="company_info_container">
+        <view class='company_intro'>
+          <text>{{companyInfo.intro}}</text>
+        </view>
+        <block wx:for="{{companyInfo.advantages}}" wx:for-item="advantage">
+          <view class="advantage_title">
+            {{advantage.advantage_title}}
+          </view>
+          <view class='advantage_name'>
+            优势
+          </view>
+          <view class="advantage_value">
+            <text>{{advantage.advantage}}</text>
+          </view>
+          <view class='advantage_name'>
+            价值
+          </view>
+          <view class="advantage_value">
+            <text>{{advantage.value}}</text>
+          </view>
+          <view wx:for="{{advantage.pics}}" wx:for-item="pic_url">
+            <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view wx:else>
+    <rich-text nodes="{{companyInfo.info}}"></rich-text>
+    </view>
+
+  </van-tab>
+  <van-tab title="名片">
+    <view class='card_container'>
+      <view class='card_background'>
+        <image src='/pages/images/card_background.png' style='width:600rpx;height:900rpx;'>
+        </image>
+        <view class='card_content'>
+          <view class='avatar'>
+            <image src="{{userCard.headimgurl}}" style='width:200rpx;height:200rpx;'></image>
+          </view>
+          <view class='user_position'>
+            <view>
+              <text>{{userCard.realname}}</text>
+            </view>
+            <view class='value_font'>
+              <text>{{userCard.position}}</text>
+            </view>
+
+          </view>
+
+          <view class="card_list">
+            <view class="list_info">
+              <image src='/pages/images/phone.png' style='width:50rpx;height:50rpx;'></image>
+              <view class="list_key">
+                手机
+              </view>
+              <view class="list_value">
+                <text>{{userCard.phone}}</text>
+              </view>
+            </view>
+
+            <view class="list_info">
+              <image src='/pages/images/wechat.png' style='width:50rpx;height:50rpx;'></image>
+              <view class="list_key">
+                微信
+              </view>
+              <view class="list_value">
+                <text>{{userCard.nickname}}</text>
+              </view>
+            </view>
+            <view class="list_info">
+              <image src='/pages/images/email.png' style='width:50rpx;height:50rpx;'></image>
+              <view class="list_key">
+                邮箱
+              </view>
+              <view class="list_value">
+                <text>{{userCard.email}}</text>
+              </view>
+            </view>
+            <view class="list_info">
+              <image src='/pages/images/company.png' style='width:50rpx;height:50rpx;'></image>
+              <view class="list_key">
+                公司
+              </view>
+              <view class="list_value">
+                <text>{{userCard.company}}</text>
+              </view>
+            </view>
+            <view class="list_info">
+              <image src='/pages/images/address.png' style='width:50rpx;height:50rpx;'></image>
+              <view class="list_key">
+                地址
+              </view>
+              <view class="list_value">
+                <text>{{userCard.company_address}}</text>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-popup show="{{show_tag_select}}" position="top" bind:close="onClose" custom-style="background:#323E47" close-on-click-overlay="true" custom-class="popup_class">
+  <block wx:for="{{filterTags}}" wx:for-item="filterTag">
+    <van-tag type="primary" custom-class="filterTags" data-tag_id="{{filterTag.tag_id}}" data-tag_name="{{filterTag.tag_name}}" bindtap="tagClick">{{filterTag.tag_name}}</van-tag>
+  </block>
+</van-popup>
+<view id='fix_card' bindtap="tagSelect">
+  <image src="/pages/images/Category.png" style='width:35px;height:35px;margin-left:40rpx;'></image>
+</view>

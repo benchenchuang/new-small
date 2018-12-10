@@ -1,0 +1,55 @@
+<view wx:if="{{constants[0] != null }}">
+  <view wx:for="{{constants}}" wx:for-item="constant">
+    <view wx:if="{{constant.pic.length == 0}}">
+      <navigator url="/pages/constant_info/constant_info?constant_id={{constant.constant_id}}" class="flex-container">
+        <view class="whole_left">
+          <view class='scenes_title'>
+            <text>{{constant.title}}</text>
+          </view>
+          <view class='scenes_intro'>
+            <text>{{constant.intro}}</text>
+          </view>
+          <view class='scenes_creater'>
+            <text>{{constant.nickname}}</text>
+            <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+            <text>{{constant.praise_count}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <navigator url="/pages/constant_info/constant_info?constant_id={{constant.constant_id}}" class="flex-container">
+        <view class="scenes_container">
+          <view class="scenes_left">
+            <view class='scenes_title'>
+              <text>{{constant.title}}</text>
+            </view>
+            <view class='scenes_intro'>
+              <text>{{constant.intro}}</text>
+            </view>
+            <view class='scenes_creater'>
+              <text>{{constant.nickname}}</text>
+              <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+              <text>{{constant.praise_count}}</text>
+            </view>
+          </view>
+          <view class="scenes_right" style='background-image:url({{constant.pic}})'>
+            <view wx:if='{{constant.has_video == 1}}'>
+              <cover-view class='play_info'>
+                <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                </cover-image>
+                <cover-view class='play_text'>
+                  {{constant.duration_str}}
+                </cover-view>
+              </cover-view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>
+<view wx:if="{{constants[0] == null}}" class='no-data'>
+  暂无数据
+</view>

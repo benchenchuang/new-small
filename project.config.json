@@ -1,0 +1,81 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxc7f0f7890970659e",
+	"projectname": "mt_weapp",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 1,
+					"name": "app分享",
+					"pathName": "pages/home/home",
+					"query": "cid=17&uid=17&identify_id=11",
+					"scene": "1036",
+					"referrerInfo": {
+						"appId": "wxc7f0f7890970659e"
+					}
+				},
+				{
+					"id": 1,
+					"name": "分享打开常问页面",
+					"pathName": "pages/constant_info/constant_info",
+					"query": "cid=17&uid=7&identify_id=11&constant_id=21",
+					"scene": "1036",
+					"referrerInfo": {
+						"appId": "wxc7f0f7890970659e"
+					}
+				},
+				{
+					"id": 2,
+					"name": "分享打开文章页面",
+					"pathName": "pages/article_info/article_info",
+					"query": "cid=17&uid=7&identify_id=11&aid=116",
+					"scene": "1036",
+					"referrerInfo": {
+						"appId": "wxc7f0f7890970659e"
+					}
+				},
+				{
+					"id": 3,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "token=827a269061886077f8ca88204649c8a5&cid=17&uid=193&usid=243&code=001el91n1HWR1q03x01n1eBS0n1el91S"
+				}
+			]
+		}
+	}
+}

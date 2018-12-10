@@ -1,0 +1,2 @@
+<!--components/Loading/loading.wxml-->
+<van-loading type="spinner" hidden="{{!is_show}}" />

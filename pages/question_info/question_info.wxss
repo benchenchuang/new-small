@@ -1,0 +1,25 @@
+/* pages/question_info/question_info.wxss */
+.article_container {
+  height: 100%;
+  display: flex;
+  width: 750rpx;
+  flex-direction: column;
+  /* background: red; */
+  /* border:1px solid blue; */
+  box-sizing: border-box;
+
+} 
+.question_title{
+  width:690rpx;
+  background: #F9FAFB;
+  padding:10rpx 30rpx;
+}
+.answer{
+  padding:10rpx 30rpx;
+}
+.answer_description{
+  width:690rpx;
+  font-size:16px;
+  color:#777;
+  margin: 15rpx 0rpx;
+}

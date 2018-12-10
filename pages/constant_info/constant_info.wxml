@@ -1,0 +1,91 @@
+<!--pages/constant_info/constant_info.wxml-->
+<view wx:if="{{result.has_video == 1}}">
+  <video id="constantVideo" src='{{result.video_url}}' autoplay='true' style='width:100%'></video>
+</view>
+<view class='article_container'>
+  <view>
+    <view class="article_title">
+      <text>{{result.title}}</text>
+    </view>
+    <view>
+      <view class='article_content'>
+        <text>{{result.intro}}</text>
+      </view>
+      <view>
+        <view wx:for="{{result.pics}}" wx:for-item="pic_url">
+          <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{result.tags.length >0 }}">
+  <view class='tags'>
+    <view wx:for="{{result.tags}}" wx:for-item="tag_name">
+      <van-tag type="success" custom-class="tag">{{tag_name}}</van-tag>
+    </view>
+  </view>
+</view>
+
+<view class="praise">
+  <view class='like-view'>
+    <view>
+      <van-icon name="{{like_name}}" custom-class="like-icon" bind:click="likeClick" />
+      <text>{{result.praises_count}}</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{lists.length >0 }}">
+  <view wx:for="{{lists}}" wx:for-item="constant">
+    <view wx:if="{{constant.pic.length == 0}}">
+      <navigator url="/pages/constant_info/constant_info?constant_id={{constant.constant_id}}" class="flex-container">
+        <view class="whole_left">
+          <view class='scenes_title'>
+            <text>{{constant.title}}</text>
+          </view>
+          <view class='scenes_intro'>
+            <text>{{constant.intro}}</text>
+          </view>
+          <view class='scenes_creater'>
+            <text>{{constant.nickname}}</text>
+            <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+            <text>{{constant.praise_count}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <navigator url="/pages/constant_info/constant_info?constant_id={{constant.constant_id}}" class="flex-container">
+        <view class="scenes_container">
+          <view class="scenes_left">
+            <view class='scenes_title'>
+              <text>{{constant.title}}</text>
+            </view>
+            <view class='scenes_intro'>
+              <text>{{constant.intro}}</text>
+            </view>
+            <view class='scenes_creater'>
+              <text>{{constant.nickname}}</text>
+              <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+              <text>{{constant.praise_count}}</text>
+            </view>
+          </view>
+          <view class="scenes_right" style='background-image:url({{constant.pic}})'>
+            <view wx:if='{{constant.has_video == 1}}'>
+              <cover-view class='play_info'>
+                <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                </cover-image>
+                <cover-view class='play_text'>
+                  {{constant.duration_str}}
+                </cover-view>
+              </cover-view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>

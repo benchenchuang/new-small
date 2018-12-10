@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/article_info/article_info",
+    "pages/whole/whole",
+    "pages/tag_articles/tag_articles",
+    "pages/question_info/question_info",
+    "pages/photo/photo",
+    "pages/photo_info/photo_info",
+    "pages/constants/constants",
+    "pages/constant_info/constant_info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#48abd5",
+    "navigationBarTitleText": "面谈助手",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#777879",
+    "selectedColor": "#49aad4",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_on.png"
+      },
+      {
+        "pagePath": "pages/whole/whole",
+        "text": "资料",
+        "iconPath": "pages/images/data.png",
+        "selectedIconPath": "pages/images/data_on.png"
+      },
+      {
+        "pagePath": "pages/constants/constants",
+        "text": "图库",
+        "iconPath": "pages/images/image.png",
+        "selectedIconPath": "pages/images/image_on.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 60000
+  },
+  "debug": true
+}

@@ -1,0 +1,205 @@
+/* pages/whole/whole.wxss */
+
+
+.deamand_container {
+  padding: 5px;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  /* -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 1px;
+  -webkit-column-gap: 1px;
+  column-gap: 1px; */
+}
+
+.demand_box {
+  float:left;
+  padding: 3px;
+  width: 340rpx;
+  box-sizing: border-box;
+  /* border:1px solid blue; */
+   -webkit-box-shadow: #e3e4e5 0px 0px 10px;
+   -moz-box-shadow: #e3e4e5 0px 0px 10px;
+   box-shadow: #e3e4e5 0px 0px 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 12rpx;
+  font-size: 15px;
+}
+.demand_title{
+  margin-top:10px;
+}
+.case_container{
+  padding:5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e7e8e9;
+  box-sizing: border-box;
+}
+.case_title{
+  position: relative;
+  top:-35px;
+  padding-left: 10px;
+  color:white;
+}
+.case_creater {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #919293;
+  position: relative;
+  top:-20px;
+}
+.card_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_background{
+  margin: 60rpx;
+  box-sizing: border-box;
+  width:600rpx;
+  height:900rpx;
+}
+.card_content{
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ top:-900rpx;
+ width: 600rpx;
+ box-sizing: border-box;
+ height:900rpx;
+}
+.avatar{
+  margin-top:20rpx;
+  width: 600rpx;
+  display: flex;
+  justify-content: center;
+}
+.user_position{
+  width:600rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user_position view{
+  width:600rpx;
+  display: flex;
+  justify-content: center;
+}
+.value_font{
+  font-size: 15px;
+  color:#777879;
+}
+.card_list{
+  width:600rpx;
+  margin-top:60rpx;
+}
+.list_info{
+  display: flex;
+  padding: 20rpx 20rpx;
+  height:50rpx;
+}
+.list_info view{
+  margin-left:10rpx;
+  font-size:16px;
+}
+.list_key{
+  width:100rpx;
+  height:50rpx;
+  text-align: center;
+}
+.list_value{
+  color: #777879;
+  width:470rpx;
+  height:50rpx;
+}
+
+.company_background_img{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.company_name{
+  position: absolute;
+  top:300rpx;
+}
+.company_info_container{
+  margin:20rpx 20rpx;
+}
+.article_img{
+  width:710rpx;
+}
+.company_intro{
+  margin-bottom: 15rpx;
+  color:#919293;
+}
+.advantage_title{
+    background: #656F75;
+  color:white;
+  display: inline-block;
+  box-sizing: border-box;
+  padding:5rpx;
+  margin-bottom: 5rpx;
+  margin-top:20rpx;
+}
+.advantage_name{
+   font-size:18px;
+  margin-bottom:5rpx;
+
+}
+.advantage_value{
+  font-size:16px;
+  color:#919293;
+  margin-bottom: 5rpx;
+}
+
+#fix_card {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  opacity: 0.4;
+  bottom: 10px;
+  right: 0px;
+  background: black;
+  border: 1px solid white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  box-shadow: 0 0 4px #e7e8e9;
+  width: 180rpx;
+  height: 80rpx;
+}
+.popup_class{
+  min-height: 200rpx;
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+}
+.filterTags{
+  margin: 10rpx 10rpx;
+}
+.case_play_info{
+    background: black;
+  border-radius: 10px;
+  width:80rpx;
+  height:20rpx;
+  position: relative;
+  top: 500rpx;
+  left:500rpx;
+  opacity: 0.5;
+}
+.case_body{
+  width:100%;
+}
+.case_img_container{
+  width:100%;
+  height:600rpx;
+}
+.demand_pic{
+  width:330rpx;
+  height:300rpx;
+  position: relative;
+    background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}

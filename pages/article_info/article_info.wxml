@@ -1,0 +1,241 @@
+<!-- <web-view src="http://padminmt.xiaoshouhui.com/share/constant/30" width="20%" height="30%">
+</web-view> -->
+<view wx:if="{{result.has_video == 1}}">
+  <video id="myvideo" src='{{result.video_url}}' autoplay='true' style='width:100%'></video>
+</view>
+<view class='article_container'>
+  <!-- 场景 -->
+  <view wx:if="{{result.type == 1}}">
+    <view class="article_title">
+      <text>{{result.title}}</text>
+    </view>
+    <view>
+      <view class="article_field">
+        <text>事件</text>
+      </view>
+      <view class='article_content'>
+        <text>{{result.info.event}}</text>
+      </view>
+      <view>
+        <view class="article_field">
+          <text>措施</text>
+        </view>
+
+        <view class='article_content'>
+          <text> {{result.info.measure}}</text>
+        </view>
+      </view>
+      <view>
+        <view class="article_field">
+          <text>价值</text>
+        </view>
+        <view class='article_content'>
+          <text>{{result.info.value}}</text>
+        </view>
+        <view>
+          <view wx:for="{{result.info.imgs}}" wx:for-item="pic_url">
+            <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 案例 -->
+  <view wx:if="{{result.type == 2}}">
+    <view class="article_title">
+      <text>{{result.title}}</text>
+    </view>
+    <view>
+      <image src='{{result.cover}}' class='article_img' mode='widthFix'></image>
+    </view>
+    <view wx:if="{{result.edit_type == 1}}">
+      <rich-text nodes="{{result.info.info}}">
+      </rich-text>
+       <view wx:for="{{result.info.imgs}}" wx:for-index="idx" wx:for-item="pic_url">
+       <view wx:if="{{idx>0}}">
+        <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+       </view>
+       </view>
+    </view>
+    <view wx:else>
+      <view class="article_content">
+        <text>{{result.title}}</text>
+      </view>
+      <view wx:for="{{result.info.caseList}}" wx:for-item="case">
+        <view class='case_title'>
+          <text> {{case.title}}</text>
+        </view>
+        <view class="article_field">
+          <text>客户特殊要求</text>
+        </view>
+        <view class='article_content'>
+          <text>{{case.requires}}</text>
+        </view>
+
+        <view class="article_field">
+          <text>措施/方案/产品</text>
+        </view>
+        <view class='article_content'>
+          <text>{{case.cases_products}}</text>
+        </view>
+        <view class="article_field">
+          <text>价值</text>
+        </view>
+        <view class='article_content'>
+          <text> {{case.values}}</text>
+        </view>
+        <view>
+          <view wx:for="{{case.imgs}}" wx:for-item="pic_url">
+            <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{result.info.testimony.length >0}}">
+        <view wx:if="{{result.info.testimony_pics.length >0}}">
+          <view style='float:left;width:580rpx;font-size:15px;'>
+            <text>{{result.info.testimony}}</text>
+          </view>
+          <view wx:if="{{result.info.testimony_pics.length >0}}">
+            <image src='{{result.info.testimony_pics}}' style='width:100rpx;height:100rpx;float:right'></image>
+          </view>
+        </view>
+        <view wx:else>
+          <view style='width:100%;font-size:15px;'>
+            <text>{{result.info.testimony}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 需求 -->
+    <view wx:if="{{result.type == 3}}">
+      <view class="article_title">
+        <text>{{result.title}}</text>
+      </view>
+      <view>
+        <view class="article_field">
+          <text>问题/目标</text>
+        </view>
+        <view class='article_content'>
+          <text> {{result.info.questions}}</text>
+        </view>
+        <view class="article_field">
+          <text>不良影响/利益</text>
+        </view>
+        <view class='article_content'>
+          <text>  {{result.info.affects}}</text>
+        </view>
+        <view>
+          <view wx:for="{{result.info.imgs}}" wx:for-item="pic_url">
+            <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 产品说明 -->
+  <view wx:if="{{result.type == 4}}">
+    <view class="article_title">
+      <text>{{result.title}}</text>
+    </view>
+    <view>
+      <view>
+        <view class="article_field">
+          <text>功能</text>
+        </view>
+
+        <view class='article_content'>
+          <text>  {{result.info.features}}</text>
+        </view>
+        <view>
+        </view>
+      </view>
+      <view>
+        <view class="article_field">
+          <text>价值</text>
+        </view>
+        <view class='article_content'>
+          <text>{{result.info.values}}</text>
+        </view>
+        <view>
+          <view wx:for="{{result.info.imgs}}" wx:for-item="pic_url">
+            <image src='{{pic_url}}' class='article_img' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view wx:if="{{result.article_tags.length >0 }}">
+  <view class='tags'>
+    <view wx:for="{{result.article_tags}}" wx:for-item="tag_name">
+      <van-tag type="success" custom-class="tag">{{tag_name}}</van-tag>
+    </view>
+  </view>
+</view>
+
+<view class="praise">
+  <view class='like-view'>
+    <view>
+      <van-icon name="{{like_name}}" custom-class="like-icon" bind:click="likeClick" />
+      <text>{{result.praise_counts}}</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{articlesList.length >0 }}">
+  <view wx:for="{{articlesList}}" wx:for-item="article">
+    <view wx:if="{{article.cover.length == 0}}">
+      <navigator url="/pages/article_info/article_info?aid={{article.aid}}" class="flex-container">
+        <view class="whole_left">
+          <view class='scenes_title'>
+            <text>{{article.title}}</text>
+          </view>
+          <view class='scenes_intro'>
+            <text>{{article.intro}}</text>
+          </view>
+          <view class='scenes_creater'>
+            <text>{{article.creater}}</text>
+            <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+            <text>{{article.praise_users_count}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <navigator url="/pages/article_info/article_info?aid={{article.aid}}" class="flex-container">
+        <view class="scenes_container">
+          <view class="scenes_left">
+            <view class='scenes_title'>
+              <text>{{article.title}}</text>
+            </view>
+            <view class='scenes_intro'>
+              <text>{{article.intro}}</text>
+            </view>
+            <view class='scenes_creater'>
+              <text>{{article.creater}}</text>
+              <van-icon name="like-o" custom-style="margin-left:20px;margin-right:2px;position:relative;top:2px;" />
+              <text>{{article.praise_users_count}}</text>
+            </view>
+          </view>
+          <view class="scenes_right" style='background-image:url({{article.cover}})'>
+            <view wx:if='{{article.has_video == 1}}'>
+              <cover-view class='play_info'>
+                <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                </cover-image>
+                <cover-view class='play_text'>
+                  {{article.duration_str}}
+                </cover-view>
+              </cover-view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>

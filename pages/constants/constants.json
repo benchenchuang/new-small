@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "常问",
+  "onReachBottomDistance": 50,
+    "usingComponents": {
+      "van-icon": "../dist/icon/index"
+    }
+}

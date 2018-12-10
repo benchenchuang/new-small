@@ -1,0 +1,130 @@
+/**index.wxss**/
+.home_top{
+  padding: 0 30rpx;
+  background: linear-gradient(#48abd5 0%, #fff 70%);
+}
+.header_box{
+  padding: 20rpx 0;
+}
+/* .person {
+  flex-direction: column;
+  align-items: center;
+} */
+.person image{
+  width: 44rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+.search_box{
+  padding: 10rpx 20rpx;
+  margin-left: 30rpx;
+  border-radius: 8rpx;
+  background: rgba(255,255,255,.6);
+  box-sizing: border-box;
+}
+.search_box input,
+.search_box .placeholder{
+  font-size: 28rpx;
+  color: #fff;
+}
+.select_item{
+  padding:20rpx;
+  border-radius: 140rpx;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2rpx 2rpx 4rpx rgba(0,0,0,.05);
+}
+.select_item .avatar{
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.select_item .info{
+  font-size: 28rpx;
+  color: #333;
+}
+.info .txt{
+  padding-top: 10rpx;
+  font-size: 24rpx;
+}
+.info .txt text{
+  color: #999;
+  margin-right: 10rpx;
+}
+.info .txt .name{
+  float: right;
+  color: #333;
+}
+
+.news_box{
+  padding: 20rpx 20rpx 0;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.box_head{
+  padding: 20rpx 0;
+  height: 28rpx;
+  line-height: 28rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+.box_head .icon{
+  margin-right: 10rpx;
+  width: 28rpx;
+  vertical-align: middle;
+}
+.box_head .head_title{
+  font-size: 24rpx;
+  color: #666;
+}
+
+.news_list .news_item{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+.news_list .news_item:last-child{
+  border-bottom: none;
+}
+.news_item .item_title{
+  font-size: 30rpx;
+  color: #222;
+}
+.news_item .item_title image{
+  display: inline-block;
+  width: 32rpx;
+  height: 28rpx;
+  margin-left: 8rpx;
+  vertical-align: middle;
+}
+.label_box{
+  margin-top: 10rpx;
+}
+.label_box .label{
+  margin-right: 14rpx;
+  padding: 4rpx 8rpx;
+  font-size: 24rpx;
+  color: #bbb;
+  background: #f2f2f2;
+}
+.sort_box{
+  margin: 10rpx 0;
+  overflow: hidden;
+}
+.sort_box .sort{
+  float: left;
+  width: 23%;
+  margin: 8rpx 1%;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  border: 1px solid #e4e4e4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.sort_box .sort.more{
+  border: none;
+  color: #999;
+}

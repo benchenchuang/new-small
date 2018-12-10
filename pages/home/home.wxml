@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<view wx:if="{{list[0] != null}}">
+<view class='body_continer'>
+  <block wx:for="{{list}}" wx:for-item="list" wx:key="list">
+  
+    <view class='home_container' data-cid="{{list.cid}}" data-uid= "{{list.uid}}" data-usid="{{list.user_share_id}}" bindtap="changeCid">
+      <view class='home_left'>
+        <image src='../images/avatar.jpg' style="width:100rpx;height:100rpx"></image>
+      </view>
+      <view class='home_right'>
+        <view class='name'>{{list.nickname}}</view>
+        <view class='company'>{{list.company}}</view>
+        <view class='home_intro'>
+          <view class="title_info" wx:for="{{list.titles}}" wx:for-item="title" wx:key="title">
+              <text>{{title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+</view>
+<view wx:if="{{list[0] == null}}" class='no-data'>
+    暂无数据
+</view>
+<van-dialog
+  async-close
+  show="{{show}}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
+  bind:cancel="onCancel"
+  bind:getuserinfo="getUserInfo"
+  title="用户授权"
+  message="是否允许面谈app获取你的昵称和头像"
+>
+</van-dialog>

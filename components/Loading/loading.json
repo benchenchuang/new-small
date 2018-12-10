@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-loading": "../../pages/dist/loading/index"
+  }
+}

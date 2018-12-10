@@ -1,0 +1,17 @@
+<!--pages/question_info/question_info.wxml-->
+<view class='article_container'>
+  <view class='question_title'>
+    <text>{{infoData.question_title}}</text>
+  </view>
+  <view class='answer'>
+    <view wx:for="{{infoData.list}}" wx:for-item="list">
+      <view class="answer_description">
+        <text>{{list.answer_description}}</text>
+      </view>
+      <view wx:for="{{list.pics}}" wx:for-item="pic">
+        <image src='{{pic}}' class='pic' mode='widthFix' style='width:690rpx'></image>
+      </view>
+    </view>
+  </view>
+
+</view>

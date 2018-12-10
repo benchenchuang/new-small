@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "详情",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "van-tag": "../dist/tag/index",
+    "van-icon": "../dist/icon/index"
+  }
+}

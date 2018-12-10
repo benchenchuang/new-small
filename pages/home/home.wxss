@@ -1,0 +1,53 @@
+/* pages/home/home.wxss */
+page{
+  background: #edf6fd;
+}
+.home_container{
+  display: flex;
+  display: -webkit-flex;
+  padding:20rpx;
+  margin:20rpx;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 140rpx;
+  box-shadow: 0 2rpx 2rpx 4rpx rgba(0,0,0,.05);
+}
+.home_left{
+  margin-right: 20rpx;
+  width: 100rpx;
+}
+.home_left image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.home_right{
+  flex: 1;
+  -webkit-flex:1;
+  line-height: 1.5;
+}
+.home_right .name{
+  font-size: 28rpx;
+  color: #333;
+}
+.home_right .company{
+  font-size: 24rpx;
+  color: #333;
+}
+.home_intro{
+  font-size: 24rpx;
+  color: #8C8C8C;
+  display: flex;
+  flex-direction: column;
+}
+.home_company{
+  height:20px;
+  font-size:13px;
+  font-weight:bold;
+  float: right;
+}
+.title_info text{
+  margin-right: 20rpx;
+}

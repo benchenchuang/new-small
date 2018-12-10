@@ -1,0 +1,35 @@
+/* pages/photo/photo.wxss */
+.list_div{
+  width:380rpx;
+  height:500rpx;
+  position: relative;
+  /* border:1px solid red; */
+}
+.photo_container{
+  display: flex;
+  width: 760rpx;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.description{
+  position: relative;
+  top:-95rpx;
+  width:355rpx;
+  height:80rpx;
+  box-sizing: border-box;
+  margin:0 auto;
+  color:white;
+  font-size: 15px;
+
+}
+
+.play_info{
+  background: black;
+  border-radius: 10px;
+  width:80rpx;
+  height:25rpx;
+  position: absolute;
+  bottom: 60rpx;
+  right:60rpx;
+  opacity: 0.6;
+}

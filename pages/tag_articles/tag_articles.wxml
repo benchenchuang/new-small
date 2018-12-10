@@ -1,0 +1,84 @@
+<van-search value="{{ tag_name }}" placeholder="标签筛选" bind:focus="getFocus" disabled readonly bindtap="searchClick" />
+<block wx:if="{{list[0] != null}}">
+  <view wx:for="{{list}}" wx:for-item="list">
+    <view wx:if="{{list.cover.length == 0}}">
+      <navigator url="/pages/article_info/article_info?aid={{list.aid}}" class="flex-container">
+        <view class='index_left'>
+          <view wx:if="{{list.type == 1}}">
+            场景
+          </view>
+          <view wx:elif="{{list.type == 2}}">
+            案例
+          </view>
+          <view wx:elif="{{list.type == 3}}">
+            需求
+          </view>
+          <view wx:elif="{{list.type == 4}}">
+            产品
+          </view>
+        </view>
+        <view class='index_right'>
+          <view class='question_right_words question_index_right'>
+            <view class='question_title_right title_words'>
+              {{list.title}}
+            </view>
+            <view class='question_intro_right intro_words'>
+              <text>{{list.intro}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <navigator url="/pages/article_info/article_info?aid={{list.aid}}" class="flex-container">
+        <view class='index_left'>
+          <view wx:if="{{list.type == 1}}">
+            场景
+          </view>
+          <view wx:elif="{{list.type == 2}}">
+            案例
+          </view>
+          <view wx:elif="{{list.type == 3}}">
+            需求
+          </view>
+          <view wx:elif="{{list.type == 4}}">
+            产品
+          </view>
+        </view>
+        <view class='index_right'>
+          <view class='index_right_img background-img' style='background-image:url({{list.cover}})'>
+            <view wx:if='{{list.has_video == 1}}'>
+              <cover-view class='play_info'>
+                <cover-image src="/pages/images/play.png" style='width:8px;height:8px;' class="play-image">
+                </cover-image>
+                <cover-view class='play_text'>
+                  {{list.duration_str}}
+                </cover-view>
+              </cover-view>
+            </view>
+          </view>
+          <view class='index_right_words'>
+            <view class='index_right_title title_words'>
+              {{list.title}}
+            </view>
+            <view class='index_right_intro intro_words'>
+              <text>{{list.intro}}</text>
+            </view>
+          </view>
+
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</block>
+
+<view wx:if="{{list[0] == null}}" class='no-data'>
+  暂无数据
+</view>
+
+<van-popup show="{{show_tag_select}}" position="top" bind:close="onClose" custom-style="background:#323E47" close-on-click-overlay="true" custom-class="popup_class">
+  <block wx:for="{{filterTags}}" wx:for-item="filterTag">
+    <van-tag type="primary" custom-class="filterTags" data-tag_id="{{filterTag.tag_id}}" data-tag_name="{{filterTag.tag_name}}" bindtap="tagClick">{{filterTag.tag_name}}</van-tag>
+  </block>
+</van-popup>

@@ -1,0 +1,10 @@
+{
+   "navigationBarTitleText": "标签筛选",
+    "onReachBottomDistance":50,
+  "usingComponents": {
+    "van-button": "../dist/button/index",
+    "van-search": "../dist/search/index",
+    "van-popup": "../dist/popup/index",
+    "van-tag": "../dist/tag/index"
+  }
+}
