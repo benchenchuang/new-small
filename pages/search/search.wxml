@@ -1,0 +1,112 @@
+<!--pages/search/search.wxml-->
+<view class='search_top flex_box'>
+  <view class='flex_item'>
+    <input class='key_words' type='text' placeholder='请输入搜索内容'/>
+  </view>
+  <navigator class='cancle_btn' url='../index/index' hover-class='none'>取消</navigator>
+</view>
+
+<view class='keywords_box' wx:if="historyWords.length">
+  <view class='key_words_head'>
+    <image class='del' src='../images/icon_del.png' bindtap='delHistory' mode='widthFix'></image>
+    <text>历史搜索</text>
+  </view>
+  <view class='keywords_list'>
+    <text class='keyword' wx:for="{{historyWords}}" wx:key="index">{{item}}</text>
+  </view>
+</view>
+
+<view class='keywords_box' wx:if="hotWords.length">
+  <view class='key_words_head'>
+    <text>热搜词</text>
+  </view>
+  <view class='keywords_list'>
+    <text class='keyword' wx:for="{{hotWords}}" wx:key="index">{{item}}</text>
+  </view>
+</view>
+
+<view class='search_results'>
+
+  <view class='search_list'>
+    <view class='search_head'>
+      <navigator class='cancle_btn' hover-class='none'>取消</navigator>
+      <text class='key_word'>安全</text>
+    </view>
+
+    <view class='result_list'>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='search_list'>
+    <view class='search_head'>
+      <text class='more_read'>延伸阅读</text>
+    </view>
+
+    <view class='result_list'>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+      <navigator url='' hover-class='none' class='result_item'>
+        <view class='item_title'>
+          <text>什么是五金</text>
+          <image class='icon' src='../images/icon_pic.png' mode='widthFix'></image>
+          <image class='icon' src='../images/icon_play.png' mode='widthFix'></image>
+        </view>
+        <view class='desc'>
+          所有的 state 都被保存在一个单一对象中。建议在写代码前先想一下这个对象的结构
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+</view>
+
+
+

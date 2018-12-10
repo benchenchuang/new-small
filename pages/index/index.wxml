@@ -3,7 +3,7 @@
     <navigator class='person' url='' hover-class='none'>
       <image src='../images/person.png' mode="widthFix"></image>
     </navigator>
-    <navigator class='search_box flex_item' url='' hover-class='none'>
+    <navigator class='search_box flex_item' url='../search/search' hover-class='none'>
       <input type='search' placeholder='搜素' placeholder-class="placeholder"/>
     </navigator>
   </view>

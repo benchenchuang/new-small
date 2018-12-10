@@ -9,7 +9,8 @@
     "pages/photo/photo",
     "pages/photo_info/photo_info",
     "pages/constants/constants",
-    "pages/constant_info/constant_info"
+    "pages/constant_info/constant_info",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
